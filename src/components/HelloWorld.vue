@@ -17,20 +17,13 @@
 </template>
 
 <script>
-import { getAuth, signInWithPopup, GoogleAuthProvider } from '@firebase/auth';
+import { GoogleLogin } from '../api/firebase.js';
+
 export default {
   methods: {
     login() {
 
-      const provider = new GoogleAuthProvider();
-      const auth = getAuth();
-
-      signInWithPopup(auth, provider)
-      .then((res) => {
-        console.log(res);
-      }).catch((error) => {
-        console.log(error);
-      })
+      GoogleLogin();
     },
   },
 };
